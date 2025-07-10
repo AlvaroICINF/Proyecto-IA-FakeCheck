@@ -1,0 +1,35 @@
+:root {
+  /* Primary Blues */
+  --primary-color: #1a2b50;
+  --primary-light: #2d3d6b;
+  --primary-dark: #0e1a36;
+
+  /* Accent Colors */
+  --accent: #00b4d8;
+  --accent-dark: #0096c7;
+
+  /* Background Layers */
+  --bg-base: #0e1a36;
+  --bg-surface: #1a2b50;
+  --bg-elevated: #2d3d6b;
+  --bg-accent: rgba(0, 180, 216, 0.15);
+
+  /* UI Neutrals */
+  --ui-gray: #e0e0e0;
+  --ui-dark: #2b2d42;
+  --ui-darker: #1d1e2c;
+
+  /* Neon Highlights */
+  --neon-blue: #48cae4;
+  --neon-pink: #ff4d6d;
+
+  /* Status Colors */
+  --status-real: #4cc9f0;
+  --status-fake: #f72585;
+  --status-warning: #ff9e00;
+
+  /* Text Colors */
+  --text-primary: #edf2f4;
+  --text-secondary: #8d99ae;
+  --text-dark: #2b2d42;
+}
