@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 export default function Navbar() {
@@ -23,35 +24,26 @@ export default function Navbar() {
         <div className="desktopNavigation">
           <ul className="navigationList">
             <li className="navigationItem">
-              <a href="#home" className="navigationLink">
+              <Link to="/" className="navigationLink">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="navigationItem">
-              <a href="#detector" className="navigationLink">
+              <Link to="/fakeCheck" className="navigationLink">
                 Detector
-              </a>
-            </li>
-            <li className="navigationItem">
-              <a href="#about" className="navigationLink">
-                About
-              </a>
-            </li>
-            <li className="navigationItem">
-              <a href="#contact" className="navigationLink">
-                Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button 
         <div className="ctaSection">
-          <button className="ctaButton">
+          <Link to="/fakeCheck" className="ctaButton">
             <span className="ctaText">Try Detector</span>
             <div className="ctaGlow"></div>
-          </button>
-        </div>
+          </Link>
+        </div>*/}
+        <div></div>
 
         {/* Mobile Menu Button */}
         <div className="mobileMenuButton" onClick={toggleMenu}>

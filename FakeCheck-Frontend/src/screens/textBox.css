@@ -1,0 +1,685 @@
+/* Text Container */
+.textBoxContainer {
+  min-height: 100vh;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+/* Background Effects */
+.backgroundEffects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.backgroundGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 180, 216, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 180, 216, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.backgroundGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 30% 20%,
+      rgba(0, 180, 216, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(72, 202, 228, 0.1) 0%,
+      transparent 50%
+    );
+  animation: gradientPulse 8s ease-in-out infinite;
+}
+
+@keyframes gradientPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Detection Section */
+.detectionSection {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2rem;
+  background: rgba(26, 43, 80, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.detectionContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.detectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--text-primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.detectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Input Tabs */
+.inputTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.inputTab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(45, 61, 107, 0.3);
+  border: 2px solid rgba(0, 180, 216, 0.2);
+  border-radius: 15px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.inputTab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 180, 216, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.inputTab:hover::before {
+  left: 100%;
+}
+
+.inputTab:hover {
+  border-color: rgba(0, 180, 216, 0.5);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.inputTab.inputTabActive {
+  background: rgba(0, 180, 216, 0.15);
+  border-color: var(--accent);
+  color: var(--text-primary);
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+}
+
+.inputTabIcon {
+  font-size: 1.5rem;
+}
+
+.inputTabLabel {
+  font-size: 1rem;
+}
+
+/* Input Area */
+.inputArea {
+  margin-bottom: 2rem;
+}
+
+/* Text Input */
+.textInputContainer {
+  position: relative;
+}
+
+.textInput {
+  width: 100%;
+  padding: 1.5rem;
+  background: rgba(45, 61, 107, 0.3);
+  border: 2px solid rgba(0, 180, 216, 0.2);
+  border-radius: 15px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.textInput::placeholder {
+  color: var(--text-secondary);
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+}
+
+.textInputGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--accent), var(--neon-blue));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.textInput:focus + .textInputGlow {
+  opacity: 0.1;
+}
+
+/* File Input */
+.fileInputContainer {
+  position: relative;
+}
+
+.fileDropZone {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  border: 2px dashed rgba(0, 180, 216, 0.3);
+  border-radius: 15px;
+  background: rgba(45, 61, 107, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.fileDropZone:hover,
+.fileDropZone.fileDropZoneActive {
+  border-color: var(--accent);
+  background: rgba(0, 180, 216, 0.1);
+  transform: scale(1.02);
+}
+
+.fileDropContent {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.fileDropIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.fileDropTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.fileDropText {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.fileInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.fileDropGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--accent), var(--neon-blue));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.fileDropZone:hover .fileDropGlow,
+.fileDropZone.fileDropZoneActive .fileDropGlow {
+  opacity: 0.1;
+}
+
+.fileError {
+  color: var(--status-fake);
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Analyze Section */
+.analyzeSection {
+  display: flex;
+  justify-content: center;
+}
+
+.analyzeButton {
+  position: relative;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: var(--text-primary);
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+  min-width: 200px;
+}
+
+.analyzeButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.analyzeButton:not(:disabled):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.5);
+}
+
+.analyzeButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.analyzeButton:not(:disabled):hover::before {
+  left: 100%;
+}
+
+.analyzeButtonText {
+  position: relative;
+  z-index: 2;
+}
+
+.analyzeButtonGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--neon-blue), var(--accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.analyzeButton:not(:disabled):hover .analyzeButtonGlow {
+  opacity: 0.3;
+}
+
+/* Cyber Loader */
+.cyberLoaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(14, 26, 54, 0.9);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.cyberLoader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.cyberLoaderInner {
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--neon-blue);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1.5s linear infinite;
+}
+
+.cyberLoaderGlow {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, rgba(72, 202, 228, 0.3), transparent 70%);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.cyberLoaderText {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-top: 30px;
+  color: var(--neon-blue);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Results Container */
+.resultContainer {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  background: var(--bg-surface);
+  border-left: 5px solid;
+  animation: fadeIn 0.5s ease-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.realResult {
+  border-left-color: var(--status-real);
+}
+
+.fakeResult {
+  border-left-color: var(--status-fake);
+}
+
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ui-border);
+}
+
+.resultTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.resultIcon {
+  font-size: 1.8rem;
+}
+
+.resultConfidence {
+  font-size: 1rem;
+  background: var(--bg-elevated);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.resultConfidence span {
+  font-weight: bold;
+}
+
+.resultDetails {
+  margin-bottom: 1.5rem;
+}
+
+.resultSubtitle {
+  color: var(--neon-blue);
+  margin: 1rem 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.resultText {
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.evidenceList {
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+.evidenceItem {
+  margin: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.evidenceMarker {
+  position: absolute;
+  left: 0;
+  color: var(--neon-blue);
+}
+
+.resultFooter {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+/* Error Container */
+.errorContainer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(247, 37, 133, 0.1);
+  border-left: 5px solid var(--status-fake);
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.errorIcon {
+  font-size: 2rem;
+  color: var(--status-fake);
+}
+
+.errorText {
+  flex: 1;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* File Preview Styles */
+.filePreviewContainer {
+  position: relative;
+  margin-top: 1rem;
+  border: 2px dashed var(--ui-border);
+  border-radius: 15px;
+  padding: 1rem;
+  background: var(--bg-surface);
+}
+
+.filePreviewImage {
+  max-width: 100%;
+  max-height: 300px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fileIcon {
+  font-size: 2rem;
+}
+
+.fileDetails {
+  flex: 1;
+}
+
+.fileName {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  word-break: break-all;
+}
+
+.fileSize {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.removeFileButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--status-fake);
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.removeFileButton:hover {
+  background: var(--neon-pink);
+}
+
+/* Drag and Drop Feedback */
+.fileDropZoneActive {
+  border-color: var(--neon-blue);
+  background: rgba(72, 202, 228, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .resultHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .resultTitle {
+    font-size: 1.2rem;
+  }
+
+  .resultContainer {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cyberLoader {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cyberLoaderText {
+    font-size: 1rem;
+  }
+
+  .resultTitle {
+    font-size: 1.1rem;
+  }
+}
