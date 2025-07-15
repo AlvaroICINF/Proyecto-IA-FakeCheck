@@ -106,7 +106,7 @@ export default function TextBox() {
 
     try {
       const response = await fetch(
-        "https://bulllt.app.n8n.cloud/webhook-test/deepfakeDetection",
+        "https://bulllt.app.n8n.cloud/webhook/deepfakeDetection",
         {
           method: "POST",
           body: formData,
@@ -166,7 +166,8 @@ export default function TextBox() {
           <div className="detectionHeader">
             <h2 className="detectionTitle">Interfaz de Detección IA</h2>
             <p className="detectionSubtitle">
-              Elige tu método de entrada y deja que nuestra IA analice el contenido
+              Elige tu método de entrada y deja que nuestra IA analice el
+              contenido
             </p>
           </div>
 
