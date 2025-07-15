@@ -160,17 +160,17 @@ export default function TextBox() {
 
   return (
     <div className="textBoxContainer">
-      {/* Detection Interface */}
+      {/* Interfaz de Detección */}
       <section className="detectionSection">
         <div className="detectionContainer">
           <div className="detectionHeader">
-            <h2 className="detectionTitle">AI Detection Interface</h2>
+            <h2 className="detectionTitle">Interfaz de Detección IA</h2>
             <p className="detectionSubtitle">
-              Choose your input method and let our AI analyze the content
+              Elige tu método de entrada y deja que nuestra IA analice el contenido
             </p>
           </div>
 
-          {/* Input Type Tabs */}
+          {/* Pestañas de tipo de entrada */}
           <div className="inputTabs">
             <button
               className={`inputTab ${
@@ -179,7 +179,7 @@ export default function TextBox() {
               onClick={() => handleTabChange("text")}
             >
               <div className="inputTabIcon">📝</div>
-              <span className="inputTabLabel">Text</span>
+              <span className="inputTabLabel">Texto</span>
             </button>
             <button
               className={`inputTab ${
@@ -188,7 +188,7 @@ export default function TextBox() {
               onClick={() => handleTabChange("image")}
             >
               <div className="inputTabIcon">🖼️</div>
-              <span className="inputTabLabel">Image</span>
+              <span className="inputTabLabel">Imagen</span>
             </button>
             <button
               className={`inputTab ${
@@ -201,13 +201,13 @@ export default function TextBox() {
             </button>
           </div>
 
-          {/* Input Area */}
+          {/* Área de entrada */}
           <div className="inputArea">
             {activeTab === "text" && (
               <div className="textInputContainer">
                 <textarea
                   className="textInput"
-                  placeholder="Enter the text you want to analyze for deepfake detection..."
+                  placeholder="Introduce el texto que deseas analizar para detección de deepfakes..."
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   rows={8}
@@ -264,7 +264,7 @@ export default function TextBox() {
                   !selectedFile)
               }
             >
-              <span className="analyzeButtonText">Analyze Content</span>
+              <span className="analyzeButtonText">Analizar Contenido</span>
               <div className="analyzeButtonGlow"></div>
             </button>
           </div>

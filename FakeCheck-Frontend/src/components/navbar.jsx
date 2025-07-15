@@ -16,7 +16,7 @@ export default function Navbar() {
         <div className="logoSection">
           <div className="logoIcon">
             <div className="logoCircle"></div>
-            <div className="logoText">DeepGuard</div>
+            <div className="logoText">FakeCheck</div>
           </div>
         </div>
 
@@ -25,7 +25,7 @@ export default function Navbar() {
           <ul className="navigationList">
             <li className="navigationItem">
               <Link to="/" className="navigationLink">
-                Home
+                Inicio
               </Link>
             </li>
             <li className="navigationItem">
@@ -69,7 +69,7 @@ export default function Navbar() {
                 className="mobileNavigationLink"
                 onClick={toggleMenu}
               >
-                Home
+                Inicio
               </a>
             </li>
             <li className="mobileNavigationItem">
@@ -87,7 +87,7 @@ export default function Navbar() {
                 className="mobileNavigationLink"
                 onClick={toggleMenu}
               >
-                About
+                Acerca de
               </a>
             </li>
             <li className="mobileNavigationItem">
@@ -96,7 +96,7 @@ export default function Navbar() {
                 className="mobileNavigationLink"
                 onClick={toggleMenu}
               >
-                Contact
+                Contacto
               </a>
             </li>
           </ul>

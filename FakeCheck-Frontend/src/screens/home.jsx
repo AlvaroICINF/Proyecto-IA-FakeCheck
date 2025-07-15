@@ -10,12 +10,10 @@ export default function Home() {
           <div className="heroText">
             <h1 className="heroTitle">
               <span className="heroTitleMain">DeepFake</span>
-              <span className="heroTitleAccent">Detection</span>
+              <span className="heroTitleAccent">Detección</span>
             </h1>
             <p className="heroDescription">
-              Advanced AI-powered detection for deepfake content. Analyze text,
-              images, and videos with cutting-edge machine learning algorithms
-              to identify synthetic media.
+              Detección avanzada de deepfakes impulsada por IA. Analiza texto, imágenes y videos con algoritmos de aprendizaje automático de última generación para identificar contenido sintético.
             </p>
           </div>
           <div className="heroVisual">
@@ -28,32 +26,29 @@ export default function Home() {
       {/* Features Section */}
       <section className="featuresSection">
         <div className="featuresContainer">
-          <h2 className="featuresTitle">Detection Capabilities</h2>
+          <h2 className="featuresTitle">Capacidades de Detección</h2>
           <div className="featuresGrid">
             <div className="featureCard">
               <div className="featureIcon">🧠</div>
-              <h3 className="featureTitle">AI-Powered Analysis</h3>
+              <h3 className="featureTitle">Análisis impulsado por IA</h3>
               <p className="featureDescription">
-                Advanced neural networks trained on millions of samples to
-                detect synthetic content
+                Redes neuronales avanzadas entrenadas con millones de muestras para detectar contenido sintético
               </p>
               <div className="featureGlow"></div>
             </div>
             <div className="featureCard">
               <div className="featureIcon">⚡</div>
-              <h3 className="featureTitle">Real-time Processing</h3>
+              <h3 className="featureTitle">Procesamiento en tiempo real</h3>
               <p className="featureDescription">
-                Lightning-fast analysis with results delivered in seconds, not
-                minutes
+                Análisis ultrarrápido con resultados entregados en segundos, no minutos
               </p>
               <div className="featureGlow"></div>
             </div>
             <div className="featureCard">
               <div className="featureIcon">🔒</div>
-              <h3 className="featureTitle">Secure & Private</h3>
+              <h3 className="featureTitle">Seguro y Privado</h3>
               <p className="featureDescription">
-                Your data is processed securely with end-to-end encryption and
-                privacy protection
+                Tus datos se procesan de forma segura con cifrado de extremo a extremo y protección de la privacidad
               </p>
               <div className="featureGlow"></div>
             </div>
